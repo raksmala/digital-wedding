@@ -423,6 +423,8 @@ body:not(.hero-on-dark) .audio-control button {
   gap: 1.25rem;
   margin-bottom: 3.5rem;
   max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .timeline-year {
   font-family: var(--font-sans);
@@ -850,6 +852,36 @@ body:not(.hero-on-dark) .audio-control button {
   #weddingevent .inner, #lovestory, #gallery, #rsvp, #weddinggift {
     padding-left: 4vw;
     padding-right: 4vw;
+  }
+  .timeline-item {
+    width: min(100%, 960px);
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+    column-gap: 3rem;
+    align-items: center;
+  }
+  .timeline-item > *:not(.timeline-visual) {
+    grid-column: 2;
+  }
+  .timeline-visual {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    width: min(320px, 100%);
+    margin-top: 0;
+  }
+  .timeline-copy {
+    text-align: left;
+  }
+  .timeline-item:nth-child(even) > *:not(.timeline-visual) {
+    grid-column: 1;
+  }
+  .timeline-item:nth-child(even) .timeline-visual {
+    grid-column: 2;
+  }
+  .timeline-item:nth-child(even) .timeline-year,
+  .timeline-item:nth-child(even) .timeline-heading,
+  .timeline-item:nth-child(even) .timeline-copy {
+    text-align: right;
+    justify-self: end;
   }
 }
 @media (max-width: 767px) {
