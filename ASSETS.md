@@ -1,8 +1,8 @@
-# Claire Static Clone — Asset Attribution
+# Claire Static Clone — Asset Notes
 
-Source site: https://groovepublic.com/claire/  
-Vendor: Groove Public (groovepublic.com / groovepublic.id)  
-Couple photos and demo content © original client / Groove Public.  
+Source site: original live invitation build.  
+Vendor: original invitation studio.  
+Couple photos and demo content © original client / original creator.  
 For local rebuild / offline demo only — not for redistribution.
 
 ## Remote → local mapping
