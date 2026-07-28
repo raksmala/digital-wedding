@@ -1,434 +1,795 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The Wedding of Dexter & Hualin — digital invitation (static clone)" />
-  <title>THE WEDDING OF Dexter - Hualin</title>
-  <link rel="stylesheet" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="assets/css/fonts.css" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
-</head>
-<body class="is-locked">
-  <audio id="song" loop preload="auto" src="assets/media/daylight.mp3"></audio>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The Wedding of Rendy & Dinar — digital invitation (static clone)"
+    />
+    <title>THE WEDDING OF Rendy - Dinar</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+  </head>
+  <body class="is-locked">
+    <audio
+      id="song"
+      loop
+      preload="auto"
+      src="assets/media/daylight.mp3"
+    ></audio>
 
-  <!-- Cover -->
-  <section id="section-cover" aria-label="Invitation cover">
-    <p class="cover-kicker">The Wedding of</p>
-    <h1 class="cover-names">Dexter - Hualin</h1>
-    <p class="cover-date">Saturday, 21 August 202X</p>
-    <div class="cover-card">
-      <p class="dear">Dear</p>
-      <span class="bp-dynamic-guest-name" data-fallback="Guest">Guest</span>
-      <p class="cover-disclaimer">We apologize if there is any misspelling of name or title</p>
-      <a class="btn-open" id="btn-lets-open" href="#">Let's Open</a>
+    <!-- Cover -->
+    <section id="section-cover" aria-label="Invitation cover">
+      <p class="cover-kicker">The Wedding of</p>
+      <h1 class="cover-names">Rendy - Dinar</h1>
+      <p class="cover-date">Saturday, 21 August 202X</p>
+      <div class="cover-card">
+        <p class="dear">Dear</p>
+        <span class="bp-dynamic-guest-name" data-fallback="Guest">Guest</span>
+        <p class="cover-disclaimer">
+          We apologize if there is any misspelling of name or title
+        </p>
+        <a class="btn-open" id="btn-lets-open" href="#">Let's Open</a>
+      </div>
+    </section>
+
+    <!-- Fixed chrome -->
+    <div class="menu-nav">
+      <button type="button" id="btn-menu" aria-label="Open menu">
+        <svg viewBox="0 0 28 16" fill="none" aria-hidden="true">
+          <path
+            d="M1 2h26M1 14h26"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
     </div>
-  </section>
+    <div class="audio-control">
+      <button type="button" id="audio-toggle" aria-label="Toggle music">
+        <svg
+          class="icon-pause"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <rect x="6" y="5" width="4" height="14" rx="1" />
+          <rect x="14" y="5" width="4" height="14" rx="1" />
+        </svg>
+        <svg
+          class="icon-play"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M8 5v14l11-7L8 5z" />
+        </svg>
+      </button>
+    </div>
 
-  <!-- Fixed chrome -->
-  <div class="menu-nav">
-    <button type="button" id="btn-menu" aria-label="Open menu">
-      <svg viewBox="0 0 28 16" fill="none" aria-hidden="true">
-        <path d="M1 2h26M1 14h26" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-  <div class="audio-control">
-    <button type="button" id="audio-toggle" aria-label="Toggle music">
-      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5z"/></svg>
-    </button>
-  </div>
-
-  <main class="site">
-    <!-- Hero -->
-    <section class="overlay-sec" id="home" aria-label="Hero">
-      <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-00216.jpg">
-        <source src="assets/media/japan-vibe.mp4" type="video/mp4" />
-      </video>
-      <div class="hero-shade"></div>
-      <div class="hero-inner">
-        <div class="hero-top">
-          <h1>The Wedding Of</h1>
-          <h1>Saturday, 21 August 202X</h1>
-        </div>
-        <div class="name-scroll-container">
-          <div class="name-scroll-text" aria-hidden="true">
-            <span>* Dexter - Hualin <img class="flower" src="assets/img/icons/flower.svg" alt="" /></span>
-            <span>* Dexter - Hualin <img class="flower" src="assets/img/icons/flower.svg" alt="" /></span>
-            <span>* Dexter - Hualin <img class="flower" src="assets/img/icons/flower.svg" alt="" /></span>
-            <span>* Dexter - Hualin <img class="flower" src="assets/img/icons/flower.svg" alt="" /></span>
+    <main class="site">
+      <!-- Hero -->
+      <section class="overlay-sec" id="home" aria-label="Hero">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/img/hero-00216.jpg"
+        >
+          <source src="assets/media/japan-vibe.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-shade"></div>
+        <div class="hero-inner">
+          <div class="hero-top">
+            <h1>The Wedding Of</h1>
+            <h1>Saturday, 21 August 202X</h1>
           </div>
-        </div>
-        <p class="hero-quote">
-          “But at the beginning of creation God ‘made them male and female.’ ‘For this reason a man will leave his father and mother and be united to his wife, and the two will become one flesh.’ So they are no longer two, but one flesh.” — Mark 10:6-9
-        </p>
-        <div class="hero-countdown" data-countdown aria-label="Countdown">
-          <div class="cd-item"><span class="cd-num" data-cd="days">00</span> D</div>
-          <div class="cd-item"><span class="cd-num" data-cd="hours">00</span> H</div>
-          <div class="cd-item"><span class="cd-num" data-cd="mins">00</span> M</div>
-          <div class="cd-item"><span class="cd-num" data-cd="secs">00</span> S</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quote -->
-    <section class="quote-strip section-dark">
-      <div class="quote-strip-inner" data-reveal>
-        <p class="quote-label">Ecclesiastes 4:9</p>
-        <h2>Two are better than one, for they have a good return for their labor</h2>
-      </div>
-    </section>
-
-    <!-- Bride -->
-    <section class="profile section-dark" id="profile">
-      <p class="eyebrow" data-reveal>The Bride</p>
-      <div class="profile-row bride-layout">
-        <div class="profile-media" data-reveal>
-          <img class="profile-photo" src="assets/img/story-00195.jpg" alt="Hualin Arabelle" />
-        </div>
-        <div class="profile-body" data-reveal>
-          <p class="profile-nick">(Hualin)</p>
-          <h1 class="profile-name">Hualin Arabelle</h1>
-          <p class="profile-parents">
-            The Daughter of<br />
-            Mr. Lorem ipsum dolor sit amet<br />
-            Mrs. Lorem ipsum dolor sit amet
-          </p>
-          <a class="btn-ig" href="https://www.instagram.com/groovepublic.id" target="_blank" rel="noopener">
-            @instagram
-            <span class="arrow" aria-hidden="true">
-              <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M4 2h6v6" stroke="currentColor" stroke-width="1.5"/></svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Groom -->
-    <section class="profile section-dark" id="groom">
-      <p class="eyebrow" data-reveal>The Groom</p>
-      <div class="profile-row groom-layout">
-        <div class="profile-media" data-reveal>
-          <img class="profile-photo" src="assets/img/hero-00216.jpg" alt="Dexter Emmanuel" />
-        </div>
-        <div class="profile-body" data-reveal>
-          <p class="profile-nick">(Dexter)</p>
-          <h1 class="profile-name">Dexter Emmanuel</h1>
-          <p class="profile-parents">
-            The Son of<br />
-            Mr. Lorem ipsum dolor sit amet<br />
-            Mrs. Lorem ipsum dolor sit amet
-          </p>
-          <a class="btn-ig" href="https://www.instagram.com/groovepublic.id" target="_blank" rel="noopener">
-            @instagram
-            <span class="arrow" aria-hidden="true">
-              <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M4 2h6v6" stroke="currentColor" stroke-width="1.5"/></svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Love story -->
-    <section id="lovestory">
-      <div class="lovestory-intro" data-reveal>
-        <h2 class="story-title">A Journey in Love</h2>
-        <img class="story-hero-img" src="assets/img/story-00145.jpg" alt="Dexter and Hualin" />
-      </div>
-    </section>
-
-    <section class="timeline" aria-label="Love story timeline">
-      <article class="timeline-item" data-reveal>
-        <p class="timeline-year">2023</p>
-        <h3 class="timeline-heading">/ <em>The First Encounter</em></h3>
-        <p class="timeline-copy">
-          It began with a chance meeting — a quiet introduction that somehow felt familiar. Conversations stretched longer than planned, and the days that followed made room for something new.
-        </p>
-        <div class="timeline-visual">
-          <img src="assets/img/gallery-00168.jpg" alt="2023 memory" />
-        </div>
-      </article>
-
-      <article class="timeline-item" data-reveal style="position:relative">
-        <p class="timeline-year">2024</p>
-        <h3 class="timeline-heading">/ <em>The First Encounter</em></h3>
-        <p class="timeline-copy">
-          Seasons changed and so did they — learning each other’s rhythms, collecting little rituals, and choosing one another again and again.
-        </p>
-        <div class="timeline-visual">
-          <img src="assets/img/gallery-00169.jpg" alt="2024 memory" />
-        </div>
-        <span class="bg-word" aria-hidden="true">celebration</span>
-      </article>
-
-      <article class="timeline-item" data-reveal>
-        <p class="timeline-year">2025</p>
-        <h3 class="timeline-heading">/ <em>The Proposal</em></h3>
-        <p class="timeline-copy">
-          In early 2025, over coffee and a Tokyo skyline, Dexter asked Hualin to marry him. What followed was a promise — and the beginning of planning a celebration that felt like them.
-        </p>
-        <div class="timeline-visual">
-          <img src="assets/img/story-00145.jpg" alt="Fujikawaguchiko" />
-          <span class="caption">Fujikawaguchiko</span>
-        </div>
-      </article>
-    </section>
-
-    <!-- Wedding event -->
-    <section id="weddingevent">
-      <div class="scroll-container" aria-hidden="true">
-        <div class="scroll-text">
-          <span>/ Almost Time For Our Celebration</span>
-          <span>/ Almost Time For Our Celebration</span>
-          <span>/ Almost Time For Our Celebration</span>
-          <span>/ Almost Time For Our Celebration</span>
-        </div>
-      </div>
-      <div class="inner">
-        <h3 class="details-title" data-reveal>Wedding<br />/ Details</h3>
-        <h1 class="details-date" data-reveal>Thursday<br />20.08.202X</h1>
-
-        <div class="event-block" data-reveal>
-          <h3>Holy Matrimony<br />8 AM - 10 PM</h3>
-          <p>Jl. Taman Palem Lestari Barat No.1 Blok B 13, Cengkareng Barat, Jakarta, 11730, Indonesia</p>
-          <div class="event-actions">
-            <a class="icon-link" href="https://maps.app.goo.gl/78MwTKCz1Qn13PFD8" target="_blank" rel="noopener" aria-label="Open map">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
-            </a>
-            <a class="btn-calendar" href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Dexter%20%26%20Hualin%20Wedding%0ADTSTART:20260820T010000Z%0ADTEND:20260820T050000Z%0ALOCATION:Jakarta%0AEND:VEVENT%0AEND:VCALENDAR">Add to Calendar</a>
-          </div>
-        </div>
-
-        <div class="event-block" data-reveal>
-          <h3>Reception<br />10 AM - 12 PM</h3>
-          <p>Jl. Taman Palem Lestari Barat No.1 Blok B 13, Cengkareng Barat, Jakarta, 11730, Indonesia</p>
-          <div class="event-actions">
-            <a class="icon-link" href="https://maps.app.goo.gl/78MwTKCz1Qn13PFD8" target="_blank" rel="noopener" aria-label="Open map">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="dress-code" data-reveal>
-          <h3>A Guide to Dress Codes</h3>
-          <p>We kindly suggest elegant attire in soft neutrals and muted earth tones.</p>
-          <div class="dress-swatches" aria-hidden="true">
-            <span class="swatch-ivory"></span>
-            <span class="swatch-sage"></span>
-            <span class="swatch-navy"></span>
-            <span class="swatch-blush"></span>
-          </div>
-        </div>
-
-        <div class="virtual-join" data-reveal>
-          <h3>Join Us Virtually<br />8 AM - 10 PM</h3>
-          <p>Unable to attend in person? Watch along on our channel.</p>
-          <div class="event-actions" style="margin-top:0.75rem">
-            <a class="icon-link" href="https://www.youtube.com/@Groovepublic/videos" target="_blank" rel="noopener" aria-label="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a4 4 0 00-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 00.5 6.2 41.4 41.4 0 000 12a41.4 41.4 0 00.5 5.8 4 4 0 002.8 2.8C5.1 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 002.8-2.8A41.4 41.4 0 0024 12a41.4 41.4 0 00-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gift -->
-    <section id="weddinggift">
-      <h3 data-reveal>For those of you who want to give a token of love to the bride and groom, you can use the account number below:</h3>
-      <button type="button" class="btn-dark" id="btn-open-gift">Click Here</button>
-    </section>
-
-    <!-- RSVP -->
-    <section id="rsvp">
-      <div class="rsvp-grid">
-        <div>
-          <p class="rsvp-intro">
-            We kindly request your prompt response to confirm your attendance at our upcoming event. Alongside your RSVP, please take a moment to extend your warm regards and best wishes.
-          </p>
-          <form class="rsvp-form" id="rsvp-form" novalidate>
-            <div class="field">
-              <label for="guest_name">Full Name * <span class="rsvpkit-name-count char-count">(0/100)</span> <span style="font-weight:400;color:#888">(Auto-filled from URL)</span></label>
-              <input type="text" id="guest_name" name="guest_name" maxlength="100" required readonly />
-              <p class="hint">This name is taken from the URL parameter and cannot be changed.</p>
+          <div class="name-scroll-container">
+            <div class="name-scroll-text" aria-hidden="true">
+              <span
+                >* Rendy - Dinar
+                <img class="flower" src="assets/img/icons/flower.svg" alt=""
+              /></span>
+              <span
+                >* Rendy - Dinar
+                <img class="flower" src="assets/img/icons/flower.svg" alt=""
+              /></span>
+              <span
+                >* Rendy - Dinar
+                <img class="flower" src="assets/img/icons/flower.svg" alt=""
+              /></span>
+              <span
+                >* Rendy - Dinar
+                <img class="flower" src="assets/img/icons/flower.svg" alt=""
+              /></span>
             </div>
-            <div class="field">
-              <label for="attendance_status">Attendance Status *</label>
-              <select id="attendance_status" name="attendance_status" required>
-                <option value="">Select attendance status</option>
-                <option value="attending">Attending</option>
-                <option value="not_attending">Not Attending</option>
-              </select>
+          </div>
+          <p class="hero-quote">
+            “But at the beginning of creation God ‘made them male and female.’
+            ‘For this reason a man will leave his father and mother and be
+            united to his wife, and the two will become one flesh.’ So they are
+            no longer two, but one flesh.” — Mark 10:6-9
+          </p>
+          <div class="hero-countdown" data-countdown aria-label="Countdown">
+            <div class="cd-item">
+              <span class="cd-num" data-cd="days">00</span> D
             </div>
-            <div class="field" id="rsvp-event-selection-wrapper">
-              <label>Select Event *</label>
-              <div class="event-cards">
-                <div class="event-card">
-                  <span class="rsvpkit-event-card-name">Holy Matrimony</span>
-                  <input type="checkbox" name="events[]" value="Holy Matrimony" id="event_0" />
-                  <span class="check" aria-hidden="true"></span>
-                </div>
-                <div class="event-card">
-                  <span class="rsvpkit-event-card-name">Reception</span>
-                  <input type="checkbox" name="events[]" value="Reception" id="event_1" />
-                  <span class="check" aria-hidden="true"></span>
+            <div class="cd-item">
+              <span class="cd-num" data-cd="hours">00</span> H
+            </div>
+            <div class="cd-item">
+              <span class="cd-num" data-cd="mins">00</span> M
+            </div>
+            <div class="cd-item">
+              <span class="cd-num" data-cd="secs">00</span> S
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quote -->
+      <section class="quote-strip section-dark">
+        <div class="quote-strip-inner" data-reveal>
+          <p class="quote-label">Ecclesiastes 4:9</p>
+          <h2>
+            Two are better than one, for they have a good return for their labor
+          </h2>
+        </div>
+      </section>
+
+      <!-- Bride -->
+      <section class="profile section-dark" id="profile">
+        <p class="eyebrow" data-reveal>The Bride</p>
+        <div class="profile-row bride-layout">
+          <div class="profile-media" data-reveal>
+            <img
+              class="profile-photo"
+              src="assets/img/story-00195.jpg"
+              alt="Dinar Nur Izzah"
+            />
+          </div>
+          <div class="profile-body" data-reveal>
+            <p class="profile-nick">(Dinar)</p>
+            <h1 class="profile-name">Dinar Nur Izzah</h1>
+            <p class="profile-parents">
+              The Daughter of<br />
+              Mr. Lorem ipsum dolor sit amet<br />
+              Mrs. Lorem ipsum dolor sit amet
+            </p>
+            <a
+              class="btn-ig"
+              href="https://www.instagram.com/groovepublic.id"
+              target="_blank"
+              rel="noopener"
+            >
+              @instagram
+              <span class="arrow" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M2 10L10 2M4 2h6v6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Groom -->
+      <section class="profile section-dark" id="groom">
+        <p class="eyebrow" data-reveal>The Groom</p>
+        <div class="profile-row groom-layout">
+          <div class="profile-media" data-reveal>
+            <img
+              class="profile-photo"
+              src="assets/img/hero-00216.jpg"
+              alt="Rendy Kharisma Aksmala"
+            />
+          </div>
+          <div class="profile-body" data-reveal>
+            <p class="profile-nick">(Rendy)</p>
+            <h1 class="profile-name">Rendy Kharisma Aksmala</h1>
+            <p class="profile-parents">
+              The Son of<br />
+              Mr. Lorem ipsum dolor sit amet<br />
+              Mrs. Lorem ipsum dolor sit amet
+            </p>
+            <a
+              class="btn-ig"
+              href="https://www.instagram.com/groovepublic.id"
+              target="_blank"
+              rel="noopener"
+            >
+              @instagram
+              <span class="arrow" aria-hidden="true">
+                <svg viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M2 10L10 2M4 2h6v6"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Love story -->
+      <section id="lovestory">
+        <div class="lovestory-intro" data-reveal>
+          <h2 class="story-title">A Journey in Love</h2>
+          <img
+            class="story-hero-img"
+            src="assets/img/story-00145.jpg"
+            alt="Rendy and Dinar"
+          />
+        </div>
+      </section>
+
+      <section class="timeline" aria-label="Love story timeline">
+        <article class="timeline-item" data-reveal>
+          <p class="timeline-year">2023</p>
+          <h3 class="timeline-heading">/ <em>The First Encounter</em></h3>
+          <p class="timeline-copy">
+            It began with a chance meeting — a quiet introduction that somehow
+            felt familiar. Conversations stretched longer than planned, and the
+            days that followed made room for something new.
+          </p>
+          <div class="timeline-visual">
+            <img src="assets/img/gallery-00168.jpg" alt="2023 memory" />
+          </div>
+        </article>
+
+        <article class="timeline-item" data-reveal style="position: relative">
+          <p class="timeline-year">2024</p>
+          <h3 class="timeline-heading">/ <em>The First Encounter</em></h3>
+          <p class="timeline-copy">
+            Seasons changed and so did they — learning each other’s rhythms,
+            collecting little rituals, and choosing one another again and again.
+          </p>
+          <div class="timeline-visual">
+            <img src="assets/img/gallery-00169.jpg" alt="2024 memory" />
+          </div>
+          <span class="bg-word" aria-hidden="true">celebration</span>
+        </article>
+
+        <article class="timeline-item" data-reveal>
+          <p class="timeline-year">2025</p>
+          <h3 class="timeline-heading">/ <em>The Proposal</em></h3>
+          <p class="timeline-copy">
+            In early 2025, over coffee and a Tokyo skyline, Rendy asked Dinar to
+            marry him. What followed was a promise — and the beginning of
+            planning a celebration that felt like them.
+          </p>
+          <div class="timeline-visual">
+            <img src="assets/img/story-00145.jpg" alt="Fujikawaguchiko" />
+            <span class="caption">Fujikawaguchiko</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- Wedding event -->
+      <section id="weddingevent">
+        <div class="scroll-container" aria-hidden="true">
+          <div class="scroll-text">
+            <span>/ Almost Time For Our Celebration</span>
+            <span>/ Almost Time For Our Celebration</span>
+            <span>/ Almost Time For Our Celebration</span>
+            <span>/ Almost Time For Our Celebration</span>
+          </div>
+        </div>
+        <div class="inner">
+          <h3 class="details-title" data-reveal>Wedding<br />/ Details</h3>
+          <h1 class="details-date" data-reveal>Thursday<br />20.08.202X</h1>
+
+          <div class="event-block" data-reveal>
+            <h3>Holy Matrimony<br />8 AM - 10 PM</h3>
+            <p>
+              Jl. Taman Palem Lestari Barat No.1 Blok B 13, Cengkareng Barat,
+              Jakarta, 11730, Indonesia
+            </p>
+            <div class="event-actions">
+              <a
+                class="icon-link"
+                href="https://maps.app.goo.gl/78MwTKCz1Qn13PFD8"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open map"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="2.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </a>
+              <a
+                class="btn-calendar"
+                href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Rendy%20%26%20Dinar%20Wedding%0ADTSTART:20260820T010000Z%0ADTEND:20260820T050000Z%0ALOCATION:Jakarta%0AEND:VEVENT%0AEND:VCALENDAR"
+                >Add to Calendar</a
+              >
+            </div>
+          </div>
+
+          <div class="event-block" data-reveal>
+            <h3>Reception<br />10 AM - 12 PM</h3>
+            <p>
+              Jl. Taman Palem Lestari Barat No.1 Blok B 13, Cengkareng Barat,
+              Jakarta, 11730, Indonesia
+            </p>
+            <div class="event-actions">
+              <a
+                class="icon-link"
+                href="https://maps.app.goo.gl/78MwTKCz1Qn13PFD8"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open map"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="2.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="dress-code" data-reveal>
+            <h3>A Guide to Dress Codes</h3>
+            <p>
+              We kindly suggest elegant attire in soft neutrals and muted earth
+              tones.
+            </p>
+            <div class="dress-swatches" aria-hidden="true">
+              <span class="swatch-ivory"></span>
+              <span class="swatch-sage"></span>
+              <span class="swatch-navy"></span>
+              <span class="swatch-blush"></span>
+            </div>
+          </div>
+
+          <div class="virtual-join" data-reveal>
+            <h3>Join Us Virtually<br />8 AM - 10 PM</h3>
+            <p>Unable to attend in person? Watch along on our channel.</p>
+            <div class="event-actions" style="margin-top: 0.75rem">
+              <a
+                class="icon-link"
+                href="https://www.youtube.com/@Groovepublic/videos"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M23.5 6.2a4 4 0 00-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 00.5 6.2 41.4 41.4 0 000 12a41.4 41.4 0 00.5 5.8 4 4 0 002.8 2.8C5.1 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 002.8-2.8A41.4 41.4 0 0024 12a41.4 41.4 0 00-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gift -->
+      <section id="weddinggift">
+        <h3 data-reveal>
+          For those of you who want to give a token of love to the bride and
+          groom, you can use the account number below:
+        </h3>
+        <button type="button" class="btn-dark" id="btn-open-gift">
+          Click Here
+        </button>
+      </section>
+
+      <!-- RSVP -->
+      <section id="rsvp">
+        <div class="rsvp-grid">
+          <div>
+            <p class="rsvp-intro">
+              We kindly request your prompt response to confirm your attendance
+              at our upcoming event. Alongside your RSVP, please take a moment
+              to extend your warm regards and best wishes.
+            </p>
+            <form class="rsvp-form" id="rsvp-form" novalidate>
+              <div class="field">
+                <label for="guest_name"
+                  >Full Name *
+                  <span class="rsvpkit-name-count char-count">(0/100)</span>
+                  <span style="font-weight: 400; color: #888"
+                    >(Auto-filled from URL)</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  id="guest_name"
+                  name="guest_name"
+                  maxlength="100"
+                  required
+                  readonly
+                />
+                <p class="hint">
+                  This name is taken from the URL parameter and cannot be
+                  changed.
+                </p>
+              </div>
+              <div class="field">
+                <label for="attendance_status">Attendance Status *</label>
+                <select
+                  id="attendance_status"
+                  name="attendance_status"
+                  required
+                >
+                  <option value="">Select attendance status</option>
+                  <option value="attending">Attending</option>
+                  <option value="not_attending">Not Attending</option>
+                </select>
+              </div>
+              <div class="field" id="rsvp-event-selection-wrapper">
+                <label>Select Event *</label>
+                <div class="event-cards">
+                  <div class="event-card">
+                    <span class="rsvpkit-event-card-name">Holy Matrimony</span>
+                    <input
+                      type="checkbox"
+                      name="events[]"
+                      value="Holy Matrimony"
+                      id="event_0"
+                    />
+                    <span class="check" aria-hidden="true"></span>
+                  </div>
+                  <div class="event-card">
+                    <span class="rsvpkit-event-card-name">Reception</span>
+                    <input
+                      type="checkbox"
+                      name="events[]"
+                      value="Reception"
+                      id="event_1"
+                    />
+                    <span class="check" aria-hidden="true"></span>
+                  </div>
                 </div>
               </div>
+              <div class="field" id="rsvp-guest-count-wrapper">
+                <label for="guest_count">Number of Guests</label>
+                <select id="guest_count" name="guest_count">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message"
+                  >Wishes/Message
+                  <span class="rsvpkit-msg-count char-count"
+                    >(0/500)</span
+                  ></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  maxlength="500"
+                  placeholder="Write your wishes or message..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-dark" style="width: 100%">
+                Send Confirmation
+              </button>
+              <div
+                id="rsvp-form-message"
+                class="rsvp-message"
+                role="status"
+              ></div>
+            </form>
+          </div>
+          <div class="wishes-feed">
+            <div id="wishes-list"></div>
+            <div class="wishes-pager" id="wishes-pager"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pre-wedding video -->
+      <section class="video-play" aria-label="Pre-wedding film">
+        <button
+          type="button"
+          class="btn-play-video"
+          id="btn-play-video"
+          aria-label="Play Video"
+        >
+          <svg viewBox="0 0 24 24" fill="#111">
+            <path d="M8 5v14l11-7L8 5z" />
+          </svg>
+        </button>
+        <video
+          playsinline
+          controls
+          preload="metadata"
+          poster="assets/img/story-00195.jpg"
+        >
+          <source src="assets/media/japan-vibe.mp4" type="video/mp4" />
+        </video>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery">
+        <h3 data-reveal>Our Pre-<br />wedding<br />Celebration.</h3>
+        <div class="gallery-masonry" id="gallery-masonry"></div>
+      </section>
+
+      <!-- Thanks -->
+      <section class="thanks" id="thanks">
+        <h3 class="thanks-title" data-reveal>
+          <span>Thank</span><span>You</span>
+        </h3>
+        <p class="thanks-body" data-reveal>
+          It is a pleasure and honor for us, if you are willing to attend and
+          give us your blessing.
+        </p>
+        <p class="thanks-couple">Rendy - Dinar</p>
+        <div class="footer-brand">
+          <h3>
+            <a href="https://groovepublic.com" target="_blank" rel="noopener"
+              >Created by groove public</a
+            >
+          </h3>
+          <ul>
+            <li><a href="https://wa.me/6281327577133">+62 813-2757-7133</a></li>
+            <li>
+              <a
+                href="https://www.instagram.com/groovepublic.id/"
+                target="_blank"
+                rel="noopener"
+                >GROOVEPUBLIC.ID</a
+              >
+            </li>
+            <li>
+              <a href="https://groovepublic.com" target="_blank" rel="noopener"
+                >groovepublic.com</a
+              >
+            </li>
+          </ul>
+          <p class="footer-copy">© All rights reserved by groovepublic</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Nav popup -->
+    <div
+      class="popup-backdrop"
+      id="popup-nav"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation"
+    >
+      <div class="popup popup-nav">
+        <button
+          type="button"
+          class="popup-close"
+          data-close-popup
+          aria-label="Close"
+        >
+          ×
+        </button>
+        <h2>Note!</h2>
+        <nav>
+          <a href="#home" data-nav>Home</a>
+          <a href="#profile" data-nav>Profile</a>
+          <a href="#lovestory" data-nav>Love Story</a>
+          <a href="#weddingevent" data-nav>Wedding Event</a>
+          <a href="#rsvp" data-nav>RSVP</a>
+          <a href="#weddinggift" data-nav>Wedding Gift</a>
+          <a href="#gallery" data-nav>Gallery</a>
+        </nav>
+        <p class="help">
+          Please click one of the menu options above to navigate directly to
+          your desired page.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bank popup -->
+    <div
+      class="popup-backdrop"
+      id="popup-bank"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Bank Account"
+    >
+      <div class="popup popup-bank">
+        <button
+          type="button"
+          class="popup-close"
+          data-close-popup
+          aria-label="Close"
+        >
+          ×
+        </button>
+        <h2>Bank Account</h2>
+        <div class="bank-layout">
+          <div>
+            <div class="bank-card">
+              <div class="meta">
+                <p class="holder">Groove Public</p>
+                <p class="bank">Bank Mandiri</p>
+                <p class="number">00008888123</p>
+              </div>
+              <button
+                type="button"
+                class="btn-copy"
+                data-copy="00008888123"
+                aria-label="Copy account number"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="9"
+                    y="9"
+                    width="11"
+                    height="11"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                  <path
+                    d="M5 15V5a2 2 0 012-2h10"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+              </button>
             </div>
-            <div class="field" id="rsvp-guest-count-wrapper">
-              <label for="guest_count">Number of Guests</label>
-              <select id="guest_count" name="guest_count">
-                <option value="1">1</option>
-                <option value="2">2</option>
+            <div class="bank-card">
+              <div class="meta">
+                <p class="holder">Groove Public Invitation</p>
+                <p class="bank">Bank BCA</p>
+                <p class="number">00008888123</p>
+              </div>
+              <button
+                type="button"
+                class="btn-copy"
+                data-copy="00008888123"
+                aria-label="Copy account number"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="9"
+                    y="9"
+                    width="11"
+                    height="11"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                  <path
+                    d="M5 15V5a2 2 0 012-2h10"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="bank-card">
+              <div class="meta">
+                <p class="holder">Groove Public Invitation</p>
+                <p class="bank">Bank BCA</p>
+                <p class="number">00008888123</p>
+              </div>
+              <button
+                type="button"
+                class="btn-copy"
+                data-copy="00008888123"
+                aria-label="Copy account number"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="9"
+                    y="9"
+                    width="11"
+                    height="11"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                  <path
+                    d="M5 15V5a2 2 0 012-2h10"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <form class="gift-form" id="gift-confirm-form">
+            <h3>Confirm</h3>
+            <div class="field">
+              <label for="gift-name">Full Name</label>
+              <input id="gift-name" name="full_name" type="text" required />
+            </div>
+            <div class="field">
+              <label for="gift-bank">Recipient Bank</label>
+              <select id="gift-bank" name="recipient_bank" required>
+                <option value="">Select</option>
+                <option>Andi Setiawan BCA</option>
+                <option>Hesti Handayani Mandiri</option>
               </select>
             </div>
             <div class="field">
-              <label for="message">Wishes/Message <span class="rsvpkit-msg-count char-count">(0/500)</span></label>
-              <textarea id="message" name="message" maxlength="500" placeholder="Write your wishes or message..."></textarea>
+              <label for="gift-amount">Amount</label>
+              <input id="gift-amount" name="amount" type="text" required />
             </div>
-            <button type="submit" class="btn-dark" style="width:100%">Send Confirmation</button>
-            <div id="rsvp-form-message" class="rsvp-message" role="status"></div>
+            <div class="field">
+              <label for="gift-note">Note (optional)</label>
+              <textarea id="gift-note" name="note"></textarea>
+            </div>
+            <button type="submit" class="btn-send">SEND</button>
+            <p class="form-msg" role="status"></p>
           </form>
         </div>
-        <div class="wishes-feed">
-          <div id="wishes-list"></div>
-          <div class="wishes-pager" id="wishes-pager"></div>
-        </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Pre-wedding video -->
-    <section class="video-play" aria-label="Pre-wedding film">
-      <button type="button" class="btn-play-video" id="btn-play-video" aria-label="Play Video">
-        <svg viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7L8 5z"/></svg>
+    <!-- Lightbox -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Gallery lightbox"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        id="lightbox-close"
+        aria-label="Close"
+      >
+        ×
       </button>
-      <video playsinline controls preload="metadata" poster="assets/img/story-00195.jpg">
-        <source src="assets/media/japan-vibe.mp4" type="video/mp4" />
-      </video>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery">
-      <h3 data-reveal>Our Pre-<br />wedding<br />Celebration.</h3>
-      <div class="gallery-masonry" id="gallery-masonry"></div>
-    </section>
-
-    <!-- Thanks -->
-    <section class="thanks" id="thanks">
-      <h3 class="thanks-title" data-reveal><span>Thank</span><span>You</span></h3>
-      <p class="thanks-body" data-reveal>
-        It is a pleasure and honor for us, if you are willing to attend and give us your blessing.
-      </p>
-      <p class="thanks-couple">DEXTER - HUALIN</p>
-      <div class="footer-brand">
-        <h3><a href="https://groovepublic.com" target="_blank" rel="noopener">Created by groove public</a></h3>
-        <ul>
-          <li><a href="https://wa.me/6281327577133">+62 813-2757-7133</a></li>
-          <li><a href="https://www.instagram.com/groovepublic.id/" target="_blank" rel="noopener">GROOVEPUBLIC.ID</a></li>
-          <li><a href="https://groovepublic.com" target="_blank" rel="noopener">groovepublic.com</a></li>
-        </ul>
-        <p class="footer-copy">© All rights reserved by groovepublic</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- Nav popup -->
-  <div class="popup-backdrop" id="popup-nav" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="popup popup-nav">
-      <button type="button" class="popup-close" data-close-popup aria-label="Close">×</button>
-      <h2>Note!</h2>
-      <nav>
-        <a href="#home" data-nav>Home</a>
-        <a href="#profile" data-nav>Profile</a>
-        <a href="#lovestory" data-nav>Love Story</a>
-        <a href="#weddingevent" data-nav>Wedding Event</a>
-        <a href="#rsvp" data-nav>RSVP</a>
-        <a href="#weddinggift" data-nav>Wedding Gift</a>
-        <a href="#gallery" data-nav>Gallery</a>
-      </nav>
-      <p class="help">Please click one of the menu options above to navigate directly to your desired page.</p>
+      <button
+        type="button"
+        class="lightbox-nav lightbox-prev"
+        id="lightbox-prev"
+        aria-label="Previous"
+      >
+        ‹
+      </button>
+      <img id="lightbox-img" alt="Gallery preview" />
+      <button
+        type="button"
+        class="lightbox-nav lightbox-next"
+        id="lightbox-next"
+        aria-label="Next"
+      >
+        ›
+      </button>
     </div>
-  </div>
 
-  <!-- Bank popup -->
-  <div class="popup-backdrop" id="popup-bank" role="dialog" aria-modal="true" aria-label="Bank Account">
-    <div class="popup popup-bank">
-      <button type="button" class="popup-close" data-close-popup aria-label="Close">×</button>
-      <h2>Bank Account</h2>
-      <div class="bank-layout">
-        <div>
-          <div class="bank-card">
-            <div class="meta">
-              <p class="holder">Groove Public</p>
-              <p class="bank">Bank Mandiri</p>
-              <p class="number">00008888123</p>
-            </div>
-            <button type="button" class="btn-copy" data-copy="00008888123" aria-label="Copy account number">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M5 15V5a2 2 0 012-2h10" stroke="currentColor" stroke-width="1.6"/></svg>
-            </button>
-          </div>
-          <div class="bank-card">
-            <div class="meta">
-              <p class="holder">Groove Public Invitation</p>
-              <p class="bank">Bank BCA</p>
-              <p class="number">00008888123</p>
-            </div>
-            <button type="button" class="btn-copy" data-copy="00008888123" aria-label="Copy account number">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M5 15V5a2 2 0 012-2h10" stroke="currentColor" stroke-width="1.6"/></svg>
-            </button>
-          </div>
-          <div class="bank-card">
-            <div class="meta">
-              <p class="holder">Groove Public Invitation</p>
-              <p class="bank">Bank BCA</p>
-              <p class="number">00008888123</p>
-            </div>
-            <button type="button" class="btn-copy" data-copy="00008888123" aria-label="Copy account number">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M5 15V5a2 2 0 012-2h10" stroke="currentColor" stroke-width="1.6"/></svg>
-            </button>
-          </div>
-        </div>
-        <form class="gift-form" id="gift-confirm-form">
-          <h3>Confirm</h3>
-          <div class="field">
-            <label for="gift-name">Full Name</label>
-            <input id="gift-name" name="full_name" type="text" required />
-          </div>
-          <div class="field">
-            <label for="gift-bank">Recipient Bank</label>
-            <select id="gift-bank" name="recipient_bank" required>
-              <option value="">Select</option>
-              <option>Andi Setiawan BCA</option>
-              <option>Hesti Handayani Mandiri</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="gift-amount">Amount</label>
-            <input id="gift-amount" name="amount" type="text" required />
-          </div>
-          <div class="field">
-            <label for="gift-note">Note (optional)</label>
-            <textarea id="gift-note" name="note"></textarea>
-          </div>
-          <button type="submit" class="btn-send">SEND</button>
-          <p class="form-msg" role="status"></p>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery lightbox">
-    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
-    <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">‹</button>
-    <img id="lightbox-img" alt="Gallery preview" />
-    <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">›</button>
-  </div>
-
-  <script src="assets/js/guest.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/rsvp.js"></script>
-  <script src="assets/js/gallery.js"></script>
-</body>
+    <script src="assets/js/guest.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/rsvp.js"></script>
+    <script src="assets/js/gallery.js"></script>
+  </body>
 </html>
