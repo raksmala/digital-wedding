@@ -1,7 +1,18 @@
 (() => {
   /** Configurable wedding countdown target (local). */
   const COUNTDOWN_TARGET = new Date("2026-08-21T08:00:00+07:00");
+  const INTRO_TIMINGS = {
+    copyReveal: 120,
+    frameStart: 1800,
+    exit: 5600,
+    cleanup: 6300,
+    frameStep: 170,
+  };
 
+  const intro = document.getElementById("section-intro");
+  const introProgress = document.getElementById("intro-progress");
+  const introFrames = Array.from(document.querySelectorAll(".intro-photo"));
+  const introTexts = Array.from(document.querySelectorAll(".intro-kicker, .intro-name"));
   const cover = document.getElementById("section-cover");
   const openBtn = document.getElementById("btn-lets-open");
   const audio = document.getElementById("song");
@@ -11,9 +22,127 @@
   const navPopup = document.getElementById("popup-nav");
   const bankPopup = document.getElementById("popup-bank");
   const openGiftBtn = document.getElementById("btn-open-gift");
+  let introTimers = [];
+  let introProgressTimer = null;
+  let introFrameTimer = null;
+  let audioAutoPausedForFocusLoss = false;
+
+  function clearIntroTimers() {
+    introTimers.forEach((timer) => window.clearTimeout(timer));
+    introTimers = [];
+    if (introProgressTimer) {
+      window.clearInterval(introProgressTimer);
+      introProgressTimer = null;
+    }
+    if (introFrameTimer) {
+      window.clearInterval(introFrameTimer);
+      introFrameTimer = null;
+    }
+  }
+
+  function finishIntro() {
+    clearIntroTimers();
+    if (intro) {
+      intro.classList.remove("is-photo-lead", "is-copy-on", "is-exit");
+      intro.setAttribute("aria-hidden", "true");
+    }
+    if (introProgress) introProgress.textContent = "100%";
+    document.body.classList.remove("intro-is-active");
+  }
+
+  function startIntroProgress() {
+    if (!introProgress) return;
+    const duration = INTRO_TIMINGS.cleanup;
+    const start = performance.now();
+    introProgress.textContent = "0%";
+
+    introProgressTimer = window.setInterval(() => {
+      const elapsed = performance.now() - start;
+      const progress = Math.min(100, Math.round((elapsed / duration) * 100));
+      introProgress.textContent = `${progress}%`;
+
+      if (progress >= 100) {
+        window.clearInterval(introProgressTimer);
+        introProgressTimer = null;
+      }
+    }, 90);
+  }
+
+  function startIntroFrames() {
+    if (!introFrames.length) return;
+
+    let index = 0;
+    introFrames.forEach((frame, frameIndex) => {
+      frame.classList.toggle("is-current", frameIndex === 0);
+      frame.classList.remove("is-previous");
+    });
+
+    introFrameTimer = window.setInterval(() => {
+      index = (index + 1) % introFrames.length;
+
+      introFrames.forEach((frame, frameIndex) => {
+        frame.classList.toggle("is-current", frameIndex === index);
+      });
+    }, INTRO_TIMINGS.frameStep);
+  }
+
+  function splitIntroText() {
+    introTexts.forEach((el) => {
+      if (el.dataset.splitReady === "true") return;
+
+      const chars = Array.from(el.textContent ?? "");
+      el.textContent = "";
+
+      chars.forEach((char, index) => {
+        const span = document.createElement("span");
+        span.className = "intro-char";
+        span.style.setProperty("--char-index", String(index));
+        span.textContent = char === " " ? "\u00A0" : char;
+        if (char === " ") span.classList.add("is-space");
+        el.appendChild(span);
+      });
+
+      el.dataset.splitReady = "true";
+    });
+  }
+
+  function runIntro() {
+    if (!intro) {
+      document.body.classList.remove("intro-is-active");
+      return;
+    }
+
+    intro.setAttribute("aria-hidden", "false");
+    intro.classList.remove("is-photo-lead", "is-copy-on", "is-exit");
+    document.body.classList.add("intro-is-active");
+    clearIntroTimers();
+    startIntroProgress();
+
+    introTimers.push(
+      window.setTimeout(() => {
+        intro.classList.add("is-copy-on");
+      }, INTRO_TIMINGS.copyReveal),
+    );
+
+    introTimers.push(
+      window.setTimeout(() => {
+        intro.classList.add("is-photo-lead");
+        startIntroFrames();
+      }, INTRO_TIMINGS.frameStart),
+    );
+
+    introTimers.push(
+      window.setTimeout(() => {
+        intro.classList.add("is-exit");
+      }, INTRO_TIMINGS.exit),
+    );
+
+    introTimers.push(window.setTimeout(finishIntro, INTRO_TIMINGS.cleanup));
+  }
 
   function openInvite() {
     if (!cover) return;
+    finishIntro();
     cover.classList.add("hidden", "blur-out");
     document.body.classList.remove("is-locked");
     document.body.classList.add("is-open", "hero-on-dark");
@@ -21,11 +150,13 @@
       audio.play().catch(() => {
         audioWrap?.classList.add("is-paused");
       });
+      audioWrap?.classList.remove("is-paused");
     }
   }
 
   function toggleAudio() {
     if (!audio) return;
+    audioAutoPausedForFocusLoss = false;
     if (audio.paused) {
       audio.play();
       audioWrap?.classList.remove("is-paused");
@@ -33,6 +164,44 @@
       audio.pause();
       audioWrap?.classList.add("is-paused");
     }
+  }
+
+  function pauseAudioOnFocusLoss() {
+    if (!audio) return;
+    if (audio.paused) return;
+
+    audioAutoPausedForFocusLoss = true;
+    audio.pause();
+    audioWrap?.classList.add("is-paused");
+  }
+
+  function resumeAudioOnFocusGain() {
+    if (!audio || !audioAutoPausedForFocusLoss) return;
+
+    audio
+      .play()
+      .then(() => {
+        audioWrap?.classList.remove("is-paused");
+      })
+      .catch(() => {
+        audioWrap?.classList.add("is-paused");
+      })
+      .finally(() => {
+        audioAutoPausedForFocusLoss = false;
+      });
+  }
+
+  function initAudioFocusSync() {
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") {
+        pauseAudioOnFocusLoss();
+      } else if (document.visibilityState === "visible") {
+        resumeAudioOnFocusGain();
+      }
+    });
+
+    window.addEventListener("blur", pauseAudioOnFocusLoss);
+    window.addEventListener("focus", resumeAudioOnFocusGain);
   }
 
   function openPopup(el) {
@@ -80,7 +249,7 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
     els.forEach((el) => io.observe(el));
   }
@@ -90,9 +259,12 @@
     if (!hero) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        document.body.classList.toggle("hero-on-dark", entry.isIntersecting && entry.intersectionRatio > 0.35);
+        document.body.classList.toggle(
+          "hero-on-dark",
+          entry.isIntersecting && entry.intersectionRatio > 0.35,
+        );
       },
-      { threshold: [0.2, 0.35, 0.5] }
+      { threshold: [0.2, 0.35, 0.5] },
     );
     io.observe(hero);
   }
@@ -126,7 +298,8 @@
       e.preventDefault();
       const msg = form.querySelector(".form-msg");
       if (msg) {
-        msg.textContent = "Thank you! Your confirmation has been recorded (demo).";
+        msg.textContent =
+          "Thank you! Your confirmation has been recorded (demo).";
         msg.classList.add("is-show");
       }
       form.reset();
@@ -142,6 +315,7 @@
       section.classList.add("is-playing");
       video.play();
       if (audio && !audio.paused) {
+        audioAutoPausedForFocusLoss = false;
         audio.pause();
         audioWrap?.classList.add("is-paused");
       }
@@ -150,6 +324,8 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("is-locked");
+    splitIntroText();
+    runIntro();
     openBtn?.addEventListener("click", (e) => {
       e.preventDefault();
       openInvite();
@@ -182,5 +358,6 @@
     initCopyButtons();
     initGiftForm();
     initVideoPlay();
+    initAudioFocusSync();
   });
 })();
