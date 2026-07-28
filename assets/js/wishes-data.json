@@ -1,0 +1,10 @@
+[
+  { "name": "Norman", "status": "attending", "message": "Selamat brody, lancar buat acaranya dan di berkahi selalu" },
+  { "name": "Belgia", "status": "attending", "message": "Awwwwwww akhirnyaa, yang di nantikan. Semoga bahagia selalu." },
+  { "name": "Fuad", "status": "attending", "message": "Congrats Dexter & Hualin! Can't wait to celebrate with you." },
+  { "name": "Piko", "status": "attending", "message": "Happy wedding! Semoga jadi keluarga yang sakinah." },
+  { "name": "Alya", "status": "attending", "message": "So happy for you both. See you at the ceremony!" },
+  { "name": "Raka", "status": "not_attending", "message": "Maaf tidak bisa hadir, doa terbaik untuk kalian berdua." },
+  { "name": "Mia", "status": "attending", "message": "Love the invite. Excited for the big day!" },
+  { "name": "Guest Sample", "status": "attending", "message": "Wishing you a lifetime of love and laughter." }
+]

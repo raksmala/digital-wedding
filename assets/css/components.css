@@ -1,0 +1,207 @@
+/* Popups, lightbox, toast */
+
+.popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+.popup-backdrop.is-open { display: flex; }
+
+.popup {
+  position: relative;
+  width: min(920px, 100%);
+  max-height: min(90vh, 900px);
+  overflow: auto;
+  background: #f2f2f2;
+  border-radius: 12px;
+  padding: 1.75rem 1.25rem 1.5rem;
+  color: #1a1a1a;
+  animation: popupIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes popupIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.popup-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.06);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Nav popup */
+.popup-nav {
+  width: min(420px, 100%);
+  text-align: center;
+  background: #111;
+  color: #fff;
+  padding: 3rem 1.5rem 2rem;
+}
+.popup-nav h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+.popup-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+.popup-nav a {
+  font-family: lausanne300, Inter, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+.popup-nav a:hover { opacity: 1; }
+.popup-nav .help {
+  font-size: 12px;
+  opacity: 0.55;
+  line-height: 1.45;
+}
+
+/* Bank popup */
+.popup-bank h2 {
+  font-family: Inter, sans-serif;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+.bank-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 800px) {
+  .bank-layout { grid-template-columns: 1.1fr 0.9fr; }
+}
+.bank-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.bank-card .meta { text-align: left; }
+.bank-card .holder { font-size: 13px; color: #666; margin-bottom: 0.15rem; }
+.bank-card .bank { font-weight: 600; font-size: 14px; }
+.bank-card .number { font-size: 14px; letter-spacing: 0.02em; }
+.btn-copy {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f4f4f4;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.btn-copy svg { width: 16px; height: 16px; }
+.btn-copy.is-copied { background: #e8f5e9; }
+
+.gift-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.gift-form h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.gift-form .field { margin-bottom: 0.85rem; }
+.gift-form label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+.gift-form input,
+.gift-form select,
+.gift-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+.gift-form textarea { min-height: 80px; resize: vertical; }
+.gift-form .btn-send {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.gift-form .form-msg {
+  display: none;
+  margin-top: 0.75rem;
+  font-size: 13px;
+  color: #1b5e20;
+}
+.gift-form .form-msg.is-show { display: block; }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.lightbox.is-open { display: flex; }
+.lightbox img {
+  max-width: min(1100px, 96vw);
+  max-height: 90vh;
+  object-fit: contain;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 22px;
+}
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 22px;
+}
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+.char-count { font-weight: 400; color: #888; }
